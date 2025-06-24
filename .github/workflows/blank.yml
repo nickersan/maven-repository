@@ -1,0 +1,16 @@
+name: package-cleanup
+
+on:
+  registry_package:
+    types: published
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/delete-package-versions@v5
+        with: 
+          package-name: 'test-package'
+          package-type: 'maven'
+          min-versions-to-keep: 10
+          delete-only-pre-release-versions: "true"
