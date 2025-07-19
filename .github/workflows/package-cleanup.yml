@@ -10,13 +10,13 @@ jobs:
     steps:
       - uses: actions/delete-package-versions@v5
         with: 
-          package-name: 'tn-parent'
+          package-name: 'com.tn.tn-parent'
           package-type: 'maven'
           min-versions-to-keep: 10
           delete-only-pre-release-versions: "true"
       - uses: actions/delete-package-versions@v5
         with: 
-          package-name: 'tn-lang'
+          package-name: 'com.tn.tn-lang'
           package-type: 'maven'
           min-versions-to-keep: 10
           delete-only-pre-release-versions: "true"    
