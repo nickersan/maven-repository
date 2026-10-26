@@ -1,8 +1,10 @@
 name: package-cleanup
 
+# weekly, not on each publish: every release of every tn and okayat library published a package and so ran this
 on:
-  registry_package:
-    types: published
+  schedule:
+    - cron: '17 3 * * 1'
+  workflow_dispatch:
 
 jobs:
   cleanup:
